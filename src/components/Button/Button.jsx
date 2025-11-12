@@ -8,12 +8,13 @@ const Button = (props) => {
     href,
     type = 'button',
     target,
-    // '' (default) | 'transparent'
+    // '' (default) | 'transparent' | 'black-10
     mode = '',
     label,
     isLabelHidden = false,
     iconName,
     iconPosition = 'before',
+    hasFillIcon,
   } = props;
 
   const isLink = href !== undefined;
@@ -26,6 +27,7 @@ const Button = (props) => {
     <Icon 
       className="button__icon"
       name={iconName}
+      hasFill={hasFillIcon}
     />
   )
 

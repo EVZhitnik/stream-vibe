@@ -18,6 +18,10 @@
     }
   }
 
+  &.is-fixed {
+    position: fixed;
+  }
+
   &__inner {
     display: flex;
     justify-content: space-between;
@@ -120,7 +124,6 @@
     display: flex;
     align-items: center;
     column-gap: 10px;
-    color: var(--color-white);
   }
 
   &__burger {

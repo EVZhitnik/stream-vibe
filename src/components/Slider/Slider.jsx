@@ -40,13 +40,16 @@ const Slider = (props) => {
     navigationTargetElementId = null,
     sliderParams = defaultSliderParams,
     isBeyondTheVieportOnMobileS,
-    hasScrollbar = true,
+    hasScrollbarOnMobile = true,
+    // '' (default) | 'abs-bottom'
+    navigationPosition = '',
+    isNavigationHiddenMobile = true,
   } = props;
 
   return (
     <div 
       className={classNames('slider', {
-        'slider--beyond-the-viewport-on-mobile-s': {isBeyondTheVieportOnMobileS}
+        'slider--beyond-the-viewport-on-mobile-s': isBeyondTheVieportOnMobileS
       })} 
       data-js-slider={JSON.stringify({
         sliderParams, 
@@ -61,9 +64,13 @@ const Slider = (props) => {
         </ul>
       </div>
       {!navigationTargetElementId && (
-        <SliderNavigation className="slider__navigation" />
+        <SliderNavigation 
+          className="slider__navigation"
+          position={navigationPosition}
+          isHiddenMobile={isNavigationHiddenMobile}
+        />
       )}
-      {hasScrollbar && (
+      {hasScrollbarOnMobile && (
         <div 
           className="slider__scrollbar visually-mobile"
           data-js-slider-scrollbar=""

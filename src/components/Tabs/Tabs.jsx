@@ -17,7 +17,7 @@ const Tabs = (props) => {
       data-js-tabs={JSON.stringify({ navigationTargetElementId })}
     >
       {!navigationTargetElementId && (
-        <TabsNavigation title={title} item={items} />
+        <TabsNavigation title={title} items={items} />
       )}
       <div className="tabs__body">
         {items.map((item, index) => {

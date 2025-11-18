@@ -32,4 +32,10 @@
     font-size: fluid-to-laptop(16, 12);
     padding: fluid-to-laptop(10, 8);
   }
+
+  &__icon {
+    &.icon {
+      --iconSize: #{fluid-to-laptop(24, 20)};
+    }
+  }
 }

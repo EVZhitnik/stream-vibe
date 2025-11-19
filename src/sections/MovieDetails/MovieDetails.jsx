@@ -4,21 +4,23 @@ import Slider from '@/components/Slider';
 import PersonCard from '@/components/PersonCard';
 import Button from '@/components/Button';
 import ReviewCard from '@/components/ReviewCard';
+import Icon from '@/components/Icon';
+import Tags from '@/components/Tags';
+import Ratings from '@/components/Ratings';
 
 const MovieDetails = () => {
   const titleId = 'movie-details-title';
   const castSliderNavigationId = 'movie-card-slider-navigation';
 
   const castItems = [
-    { imgSrc: './src/assets/images/people/cast.jpg', imgAlt: 'Ivan Ivanov', },
-    { imgSrc: './src/assets/images/people/cast.jpg', imgAlt: 'Ivan Ivanov', },
-    { imgSrc: './src/assets/images/people/cast.jpg', imgAlt: 'Ivan Ivanov', },
-    { imgSrc: './src/assets/images/people/cast.jpg', imgAlt: 'Ivan Ivanov', },
-    { imgSrc: './src/assets/images/people/cast.jpg', imgAlt: 'Ivan Ivanov', },
-    { imgSrc: './src/assets/images/people/cast.jpg', imgAlt: 'Ivan Ivanov', },
-    { imgSrc: './src/assets/images/people/cast.jpg', imgAlt: 'Ivan Ivanov', },
-    { imgSrc: './src/assets/images/people/cast.jpg', imgAlt: 'Ivan Ivanov', },
-    { imgSrc: './src/assets/images/people/cast.jpg', imgAlt: 'Ivan Ivanov', },
+    { imgSrc: './src/assets/images/people/1.jpg', imgAlt: 'Ivan Ivanov', },
+    { imgSrc: './src/assets/images/people/2.jpg', imgAlt: 'Ivan Ivanov', },
+    { imgSrc: './src/assets/images/people/3.jpg', imgAlt: 'Ivan Ivanov', },
+    { imgSrc: './src/assets/images/people/4.jpg', imgAlt: 'Ivan Ivanov', },
+    { imgSrc: './src/assets/images/people/5.jpg', imgAlt: 'Ivan Ivanov', },
+    { imgSrc: './src/assets/images/people/6.jpg', imgAlt: 'Ivan Ivanov', },
+    { imgSrc: './src/assets/images/people/7.jpg', imgAlt: 'Ivan Ivanov', },
+    { imgSrc: './src/assets/images/people/8.jpg', imgAlt: 'Ivan Ivanov', },
   ];
 
   const reviewItems = [
@@ -157,7 +159,63 @@ const MovieDetails = () => {
         </div>
       </div>
       <aside className="movie-details__info">
-        <div className="movie-details__panel"></div>
+        <div className="movie-details__panel">
+          <div className="movie-details__groups">
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="calendar" />
+                <span>Released Year</span>
+              </h3>
+              <div className="movie-details__description">
+                <time className="h6" datetime="2022">2022</time>
+              </div>
+            </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="translate" />
+                <span>Available Languages</span>
+              </h3>
+              <Tags
+                items={['English', 'Hindi', 'Tamil', 'Telegu', 'Kannada']}
+              />
+            </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="star" />
+                <span>Ratings</span>
+              </h3>
+              <Ratings 
+                items={[
+                  { title: 'IMDb', ratingValue: 4.5 },
+                  { title: 'Streamvibe', ratingValue: 4 },
+                ]}
+              />
+            </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">
+                <Icon name="genres" />
+                <span>Gernes</span>
+              </h3>
+              <Tags items={['Action', 'Adventure']} />
+            </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">Director</h3>
+              <PersonCard 
+                imgSrc='./src/assets/images/people/director.jpg'
+                name='Rishab Shetty'
+                subtitle='From India'
+              />
+            </div>
+            <div className="movie-details__group">
+              <h3 className="movie-details__title">Music</h3>
+              <PersonCard 
+                imgSrc='./src/assets/images/people/music.jpg'
+                name='B. Ajaneesh Loknath'
+                subtitle='From India'
+              />
+            </div>
+          </div>
+        </div>
       </aside>
     </section>
   )

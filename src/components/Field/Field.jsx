@@ -11,9 +11,16 @@ const Field = (props) => {
     placeholder,
     isRequered,
     inputMode,
+    mask,
   } = props;
 
   const Component = type === 'textarea' ? 'textarea' : 'input';
+
+  const extraAtters = {};
+  
+  if (mask) {
+    extraAtters['data-js-input-mask'] = mask;
+  }
 
   return (
     <div
@@ -35,6 +42,7 @@ const Field = (props) => {
           placeholder={placeholder}
           required={isRequered}
           inputMode={inputMode}
+          {...extraAtters}
         />
       </div>
     </div>

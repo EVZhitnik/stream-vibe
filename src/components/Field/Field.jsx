@@ -9,7 +9,7 @@ const Field = (props) => {
     label,
     type, // undefined (default) | 'email' | 'textarea'  
     placeholder,
-    isRequered,
+    isRequired,
     inputMode,
     mask,
   } = props;
@@ -30,7 +30,7 @@ const Field = (props) => {
         className="field__label" 
         htmlFor={id}
       >
-        {label} {isRequered && (
+        {label} {isRequired && (
           <span className="field__required-star" aria-hidden={true}>*</span>
         )}
       </label>
@@ -40,7 +40,7 @@ const Field = (props) => {
           id={id}
           type={type}
           placeholder={placeholder}
-          required={isRequered}
+          required={isRequired}
           inputMode={inputMode}
           {...extraAtters}
         />

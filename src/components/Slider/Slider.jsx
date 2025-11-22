@@ -45,6 +45,7 @@ const Slider = (props) => {
     navigationPosition = '',
     navigationMode,
     isNavigationHiddenMobile = true,
+    navigationJustifyContent,
   } = props;
 
   return (
@@ -70,6 +71,7 @@ const Slider = (props) => {
           mode={navigationMode}
           position={navigationPosition}
           isHiddenMobile={isNavigationHiddenMobile}
+          justifyContent={navigationJustifyContent}
         />
       )}
       {hasScrollbarOnMobile && (

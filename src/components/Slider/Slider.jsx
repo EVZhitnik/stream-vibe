@@ -1,4 +1,4 @@
-import './swiper/css';
+import '/swiper/css';
 import './Slider.scss';
 import SliderNavigation from './components/SliderNavigation';
 import classNames from 'classnames';

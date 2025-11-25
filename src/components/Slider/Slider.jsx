@@ -32,7 +32,7 @@ const defaultSliderParams = {
       allowTouchMove: false,
     }
   }
-};
+}
 
 const Slider = (props) => {
   const {
